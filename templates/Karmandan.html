@@ -1,0 +1,11 @@
+{% for k in karamands %}
+    <div>
+        <h1>
+            {{ k.name }}
+        </h1>
+        {% for file in k.docs.all %}
+        <a href="{{ file.file.url }}">{{ file.name }}</a><br>
+        {% endfor %}
+        <hr>
+    </div>
+{% endfor %}

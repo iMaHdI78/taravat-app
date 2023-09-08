@@ -1,0 +1,52 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+<style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/shabnam-font/5.0.1/font-face.min.css");
+
+    * {
+        font-family: 'Sahel', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Shabnam", sans-serif;
+    }
+
+    #header {
+        background-color: rgb(255, 62, 84);
+    }
+
+    .breadcrumbs {
+        background-color: rgb(255, 94, 94) !important;
+        /* color: white; */
+    }
+
+    #content-main fieldset h2, caption {
+        background-color: rgba(255, 62, 84, .4) !important;
+        color: rgb(80, 0, 0) !important;
+    }
+
+    caption a, [scope="row"] a {
+        color: rgb(80, 0, 0) !important;
+    }
+
+    /* .addlink {
+        color: rgb(255, 62, 84) !important;
+        font-weight: 700;
+    } */
+</style>
+{% endblock %}
+
+{% block branding %}
+     <div style="display: flex; justify-content: flex-start; align-items: center;">
+        <img
+            src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg"
+            alt="logo"
+            width="60px"
+            style="border-radius: 10px;"
+        />
+        <!-- Title -->
+        <h1 style="margin: 0; padding-right: 10px;">شاخ نشیا مدیر عامل</h1>
+     </div>
+     {{ block.super }}
+ {% endblock %}
