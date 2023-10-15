@@ -3,13 +3,14 @@
 {% block extrahead %}
 <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/shabnam-font/5.0.1/font-face.min.css");
+    @import url('https://v1.fontapi.ir/css/Sahel');
 
     * {
-        font-family: 'Sahel', sans-serif;
+        font-family: 'Sahel', sans-serif !important;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: "Shabnam", sans-serif;
+        font-family: "Shabnam", sans-serif !important;
     }
 
     #header {
@@ -30,6 +31,14 @@
         color: rgb(80, 0, 0) !important;
     }
 
+    /* #user-tools #logout-form {
+        display: none;
+    } */
+    /* #user-tools::after {
+        display: block !important;
+        content: "فشار بخور حالا اگه میتونی لاگ اوت کن";
+    } */
+
     /* .addlink {
         color: rgb(255, 62, 84) !important;
         font-weight: 700;
@@ -46,7 +55,7 @@
             style="border-radius: 10px;"
         />
         <!-- Title -->
-        <h1 style="margin: 0; padding-right: 10px;">شاخ نشیا مدیر عامل</h1>
+        <h1 style="margin: 0; padding-right: 10px;">برنامه مدیریت اطلاعات آرشا</h1>
      </div>
      {{ block.super }}
  {% endblock %}

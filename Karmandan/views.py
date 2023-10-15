@@ -1,26 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import employee_information
+from .models import phone_book
 
 # Create your views here.
 
-# این فانکشن برای دریافت اطلاعات کاربران است
-
-# def Karmandan(request):
-#     employee_information = employee_information.objects.all()
-#     context = {
-#         "employee_information": employee_information
-#     }
-#     return render(request, 'Karmandan.html', context)
-
-
+#این فانکشن برای فایل های کارمندان ایجاد شده
 def File(request):
     File_information = File.objects.all()
     context = {
         "File_information": File_information.objects.all()
        
     }
+    
+#این فانکشن برای دفترچه تلفن ایجاد شده 
 
+def phonebook(request):
+    phone_book = phone_book.objects.all()
+    context = {
+        "phone_book": phone_book.objects.all()
+    }
+
+# این فانکشن برای دریافت اطلاعات کاربران است
 
 def Karmandan(request):
     context = {

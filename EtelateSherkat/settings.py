@@ -14,7 +14,11 @@ SECRET_KEY = 'django-insecure-+b^s_pcya^^hjceh9f+3u1&1=x80(t8$239#_0s0g$7v!-4b!h
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '172.20.10.7',
+    # This system's ip
+    '192.168.3.8',
+    
+    # Every ip that comes to the app
+    '*',
 ]
 
 
@@ -29,7 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_jalali',
     'Sherkat.apps.SherkatConfig',
-    'Karmandan.apps.KarmandanConfig'
+    'Karmandan.apps.KarmandanConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +114,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
