@@ -15,10 +15,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # This system's ip
-    '192.168.3.8',
-    
+    # '127.0.0.1:8000',
+    # '192.168.1.203',
     # Every ip that comes to the app
-    '*',
 ]
 
 

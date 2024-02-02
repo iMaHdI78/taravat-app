@@ -21,7 +21,7 @@ class phone_book(models.Model):
     dakheli_phonebook = models.CharField(
         max_length=20, verbose_name="داخلی", blank=True, null=True) 
     mobile_phonebook = models.CharField(
-        max_length=11, verbose_name="تلفن همراه", blank=True, null=True)
+        max_length=13, verbose_name="تلفن همراه", blank=True, null=True)
     semat_phonebook = models.CharField(
         max_length=100, verbose_name="سمت", blank=True, null=True)
     email_phonebook = models.EmailField(
@@ -83,19 +83,19 @@ class employee_information(models.Model):
         max_length=100, verbose_name="نام", null=True)
 
 
-    shenasname_file = models.FileField(upload_to='karmandan/shenasname/', blank=True, null=True, verbose_name='بارگذاری شناسنامه',
+    shenasname_file = models.FileField(upload_to='karmandan/shenasname/', blank=True, null=True, verbose_name='فایل شناسنامه',
                                         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
     
-    cartmeli_file = models.FileField(upload_to='karmandan/melicard/', blank=True, null=True, verbose_name='بارگذاری کارت ملی',
+    cartmeli_file = models.FileField(upload_to='karmandan/melicard/', blank=True, null=True, verbose_name='فایل کارت ملی',
                                         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
     
-    madrak_file = models.FileField(upload_to='karmandan/madrak/', blank=True, null=True, verbose_name='بارگذاری مدرک تحصیلی',
+    madrak_file = models.FileField(upload_to='karmandan/madrak/', blank=True, null=True, verbose_name='فایل مدرک تحصیلی',
                                         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
     
-    gharardad_file = models.FileField(upload_to='karmandan/gharardad/', blank=True, null=True, verbose_name='بارگذاری قرارداد',
+    gharardad_file = models.FileField(upload_to='karmandan/gharardad/', blank=True, null=True, verbose_name='فایل قرارداد',
                                         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
     
-    bimeh_file = models.FileField(upload_to='karmandan/bimeh/', blank=True, null=True, verbose_name='بارگذاری مدرک بیمه',
+    bimeh_file = models.FileField(upload_to='karmandan/bimeh/', blank=True, null=True, verbose_name='فایل مدارک بیمه',
                                         validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
 
 
@@ -103,7 +103,7 @@ class employee_information(models.Model):
     profile_photo = models.ImageField(
         upload_to='karmandan/profile/', blank=True, null=True, verbose_name='عکس پروفایل')
     family_name = models.CharField(
-        max_length=20, verbose_name="نام خانوادگی",  null=True)
+        max_length=24, verbose_name="نام خانوادگی",  null=True)
     father_name = models.CharField(
         max_length=20, verbose_name="نام پدر", blank=True, null=True)
     national_code = models.CharField(
@@ -119,7 +119,7 @@ class employee_information(models.Model):
     tel = models.CharField(
         max_length=12, verbose_name="شماره تلفن ثابت", blank=True, null=True)
     mobile = models.CharField(
-        max_length=12, verbose_name="تلفن همراه", blank=True, null=True)
+        max_length=13, verbose_name="تلفن همراه", blank=True, null=True)
     madrak_tahsili = models.CharField(
         max_length=5, choices=MADRAK_TAHSILY, verbose_name=" مدرک تحصیلی", blank=True, null=True)
     noe_gharardad = models.CharField(

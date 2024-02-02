@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django_jalali.db import models as jmodels
 from django.core.validators import FileExtensionValidator
+from django.forms import ModelForm, PasswordInput
 
 # Create your models here.
 
@@ -99,6 +100,7 @@ class company_insurance_information(models.Model):
         max_length=20, verbose_name='نام کاربری', blank=True, null=True)
     password = models.CharField(
         max_length=20, verbose_name='رمز عبور', blank=True, null=True)
+    # password = forms.CharField(widget=PasswordInput())
     name_office_insurance_branch = models.CharField(
         max_length=30, verbose_name='نام شعبه ی بیمه دفتر', blank=True, null=True)
     office_insurance_workshop_code = models.CharField(
@@ -185,8 +187,13 @@ class sahamdaran(models.Model):
     SEX = (
         ('f', 'زن'),
         ('m', 'مرد'),
-        ('s','سایر'),
     )
+
+    shenasname_file_sahamdar = models.FileField(upload_to='karmandan/shenasname/', blank=True, null=True, verbose_name='فایل شناسنامه',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
+    
+    cartmeli_file_sahamdar = models.FileField(upload_to='karmandan/melicard/', blank=True, null=True, verbose_name='فایل کارت ملی',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
 
     sherkat_sahamdaran = models.ForeignKey(general_company_information, null=True,
         related_name='sahamdaran', verbose_name='نام شرکت / موسسه', on_delete=models.SET_NULL)

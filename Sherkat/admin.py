@@ -184,7 +184,8 @@ class tax_informationAdmin(ImportExportModelAdmin):
             {
                 'fields': [
                     (
-                        'docs',
+                        'shenasname_file_sahamdar',
+                        'cartmeli_file_sahamdar',
                     )
                 ]
             },
@@ -205,6 +206,8 @@ class sahamdaranAdmin(ImportExportModelAdmin):
                     'number_sahamdaran',
                     'tarikh_ozviat',
                     'check_box',
+                    'shenasname_file_sahamdar',
+                    'cartmeli_file_sahamdar',
                     'tarikh_payan',
                     'tel_sahamdaran',
                     'noe_shakhs',
@@ -276,7 +279,8 @@ class sahamdaranAdmin(ImportExportModelAdmin):
             {
                 'fields': [
                     (
-                        'docs',
+                        'shenasname_file_sahamdar',
+                        'cartmeli_file_sahamdar',
                     )
                 ]
             },

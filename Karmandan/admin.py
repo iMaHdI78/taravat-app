@@ -77,6 +77,7 @@ class employee_informationAdmin(ImportExportModelAdmin):
                     'semat',
                     'start_date', 
                     'check_box',
+                    'end_date_of_work',
                     'bimeh_code',
                     'noe_gharardad',
                     'madrak_tahsili',
@@ -87,6 +88,11 @@ class employee_informationAdmin(ImportExportModelAdmin):
                     'mobile',
                     'birth_place',
                     'father_name',
+                    'shenasname_file',
+                    'cartmeli_file',
+                    'madrak_file',
+                    'gharardad_file',
+                    'bimeh_file',
                     'address',
                     'tel',
                     'postal_code',
@@ -121,12 +127,12 @@ class employee_informationAdmin(ImportExportModelAdmin):
                         'family_name',
                         'father_name',
                         'national_code',
-                        'cartmeli_file',
+                        
                         'shenasname_code',
-                        'shenasname_file',
+                        
                         'sex',
                         'madrak_tahsili',
-                        'madrak_file',
+                        
                         'reshte_tahsili',
                         'tel',
                         'mobile',
@@ -151,10 +157,10 @@ class employee_informationAdmin(ImportExportModelAdmin):
                     (
                         'semat',
                         'noe_gharardad',
-                        'gharardad_file',
+                        
                         'mahale_faliat',
                         'bimeh_code',
-                        'bimeh_file',
+                        
                         'start_date',
                         'end_date_of_work',
                         
@@ -168,12 +174,30 @@ class employee_informationAdmin(ImportExportModelAdmin):
             {
                 'fields': [
                     (
-                        'docs',
+                        'shenasname_file',
+                        'cartmeli_file',
+                        
+                        'madrak_file',
+                        'gharardad_file',
+                        
+                        'bimeh_file',
+                        
                     )
                 ]
             },
         ),
+
+
+
+
+
+
+
+
     )
+    
+
+
 
 
 admin.site.register(employee_information, employee_informationAdmin)
