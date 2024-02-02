@@ -1,9 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django_jalali.db import models as jmodels
-
-from Sherkat.models import general_company_information, File
-
+from django.core.validators import FileExtensionValidator
+from Sherkat.models import general_company_information, File 
 from django.utils.html import format_html
 
 
@@ -84,8 +83,20 @@ class employee_information(models.Model):
         max_length=100, verbose_name="نام", null=True)
 
 
-    shenasname_photo = models.ImageField(
-            upload_to='karmandan/shenasnameh/', blank=True, null=True, verbose_name='عکس شناسنامه')
+    shenasname_file = models.FileField(upload_to='karmandan/shenasname/', blank=True, null=True, verbose_name='بارگذاری شناسنامه',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
+    
+    cartmeli_file = models.FileField(upload_to='karmandan/melicard/', blank=True, null=True, verbose_name='بارگذاری کارت ملی',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
+    
+    madrak_file = models.FileField(upload_to='karmandan/madrak/', blank=True, null=True, verbose_name='بارگذاری مدرک تحصیلی',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
+    
+    gharardad_file = models.FileField(upload_to='karmandan/gharardad/', blank=True, null=True, verbose_name='بارگذاری قرارداد',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
+    
+    bimeh_file = models.FileField(upload_to='karmandan/bimeh/', blank=True, null=True, verbose_name='بارگذاری مدرک بیمه',
+                                        validators=[FileExtensionValidator(allowed_extensions=['pdf', 'jpg', 'jpeg', 'png'])])
 
 
     # Image field
